@@ -1,6 +1,21 @@
-function [err] = getPosErr(x,xPred,y,yPred)
+function [err] = getPosErr(a,I,O)
+
+n = size(I,2);      % Number of Samples
+order = (size(a,1)-1) / 3;
+
+% Build X Matrix
+X = ones(n,(1+3*order));
+for p = 1:order
+    X(:,2+3*(p-1)) = I(1,:).^p;
+    X(:,3+3*(p-1)) = I(2,:).^p;
+    X(:,4+3*(p-1)) = (I(1,:) .* I(2,:)).^p;
+end
+
+% Prediction
+pred = X*a;
+
 % Calculate Position Error
-n = length(x);
-err = sum(sqrt((x-xPred).^2 + (y-yPred).^2)) / n;
+err_v = O - pred';
+err = sum(sqrt(err_v(:).^2)) / numel(err_v);
 end
 

@@ -1,4 +1,4 @@
-function [a,pred] = linReg(I,O,order)
+function [a] = linReg(I,O,order)
 
 m = size(I,1);      % Size of Sample Vector
 n = size(I,2);      % Number of Samples
@@ -13,9 +13,6 @@ end
 
 % Perform lin regression
 a = (X' * X)^-1 * X' * O';
-
-% Predict Outputs
-pred = (X*a)';
 
 end
 
