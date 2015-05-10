@@ -1,0 +1,165 @@
+\documentclass[conference]{IEEEtran}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{enumerate}
+\usepackage{scientific}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage{bookmark}
+
+\usepackage[]{mcode}	%Matlab Code
+\usepackage{tikz,pgfplots}	%Tikz
+\usepackage{paralist}	% Auzählungen
+
+% Bookmark Setup
+\bookmarksetup{numbered}
+
+% PDF Setup
+\hypersetup{pdftitle={Assignment 1}, pdfsubject={Documentation of 1st Homework}, pdfauthor={Stefan Röhrl}, pdfkeywords={MLIR Assignment 1}, pdfcreator={LaTeX}, hidelinks}
+
+
+\begin{document}
+%
+% cite all references
+%\nocite{*}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{MACHINE LEARNING IN ROBOTICS\\ Assignment 1}
+
+\author{\IEEEauthorblockN{Stefan Röhrl}
+\IEEEauthorblockA{Technische Universität München, Arcisstraße 21, Munich, Germany\\
+Email: stefan.roehrl@tum.de}}
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+
+\IEEEpeerreviewmaketitle
+
+\section{Exercise 1}
+
+\begin{compactenum}[a)]
+
+\item For k = 2 the best order with the lowest average error overall test-sets are:
+\begin{align}
+	p_1 & = 5\\
+	p_2 & = 2
+\end{align}
+
+With these polynomial orders the smallest average error overall test-sets are:
+\begin{align}
+	err_{xy} & = 0.2259\\
+	err_{\theta} & = 0.0797
+\end{align}
+
+The parameters determined with k=2 are listed below:
+$$
+\left(
+\scriptscriptstyle{
+\begin{smallmatrix}
+a_{1,1} =& -0.0034 	& a_{2,1} =& -0.0013 & a_{3,1} =& -0.0005\\
+a_{1,2} =&  0.9219  & a_{2,2} =& -0.0020 & a_{3,2} =& -0.0002\\
+a_{1,3} =& -0.0112 	& a_{2,3} =&  0.0124 & a_{3,3} =&  1.0008\\
+a_{1,4} =&  0.0087  & a_{2,4} =&  0.4703 & a_{3,4} =&  0.0001\\
+a_{1,5} =&  0.0014  & a_{2,5} =&  0.0001 & a_{3,5} =&  0.0000\\
+a_{1,6} =&  0.0009  & a_{2,6} =& -0.0035 & a_{3,6} =& -0.0004\\
+a_{1,7} =& -0.0018 	& a_{2,7} =&  0.0004 & a_{3,7} =& -0.0001\\
+a_{1,8} =&  0.0001  & a_{2,8} =&  0.0002	\\
+a_{1,9} =&  0.0069  & a_{2,9} =& -0.0154	\\
+a_{1,10} =&-0.0005 	& a_{2,10} =&-0.0009	\\
+a_{1,11} =&-0.0000 	& a_{2,11} =& 0.0000	\\
+a_{1,12} =&-0.0000 	& a_{2,12} =& 0.0008	\\
+a_{1,13} =& 0.0000  & a_{2,13} =&-0.0000	\\
+a_{1,14} =&-0.0000 	& a_{2,14} =&-0.0000	\\
+a_{1,15} =&-0.0001 	& a_{2,15} =& 0.0034	\\
+a_{1,16} =& 0.0000  & a_{2,16} =& 0.0000	
+\end{smallmatrix}}
+\right)
+$$
+
+\item For k = 5 the best order with the lowest average error overall test-sets are:
+\begin{align}
+	p_1 & = 6\\
+	p_2 & = 3
+\end{align}
+
+With these polynomial orders the smallest average error overall test-sets are:
+\begin{align}
+	err_{xy} & = 0.2259\\
+	err_{\theta} & = 0.0797
+\end{align}
+
+The parameters determined with k = 5 are listed below:
+
+$$
+\left(
+\scriptscriptstyle{
+\begin{smallmatrix}
+a_{1,1} =&   -0.0078&	a_{2,1} =&   -0.0015&	a_{3,1} =&  -0.0005 \\
+a_{1,2} =&    0.9210&	a_{2,2} =&   -0.0021&	a_{3,2} =&	-0.0004	\\
+a_{1,3} =&   -0.0074& 	a_{2,3} =&    0.0131&	a_{3,3} =&	 0.9985	\\
+a_{1,4} =&    0.0086&	a_{2,4} =&    0.4704&	a_{3,4} =&	-0.0000	\\
+a_{1,5} =&   -0.0012&	a_{2,5} =&   -0.0005&	a_{3,5} =&	 0.0000	\\
+a_{1,6} =&    0.0777&	a_{2,6} =&    0.0071&	a_{3,6} =&	-0.0004	\\
+a_{1,7} =&   -0.0035&	a_{2,7} =&    0.0008&	a_{3,7} =&	-0.0001	\\
+a_{1,8} =&    0.0002&	a_{2,8} =&    0.0002&	a_{3,8} =&	 0.0000	\\
+a_{1,9} =&    0.0007&	a_{2,9} =&   -0.0166&	a_{3,9} =&	 0.0015	\\
+a_{1,10} =&   -0.0005&	a_{2,10} =&   -0.0009&	a_{3,10} =&	 0.0000	\\
+a_{1,11} =&    0.0001&	a_{2,11} =&    0.0000	\\
+a_{1,12} =&   -0.0503&	a_{2,12} =&   -0.0080	\\
+a_{1,13} =&    0.0000&	a_{2,13} =&   -0.0000	\\
+a_{1,14} =&   -0.0000&	a_{2,14} =&   -0.0000	\\
+a_{1,15} =&    0.0015&	a_{2,15} =&    0.0037	\\
+a_{1,16} =&    0.0000&	a_{2,16} =&    0.0000	\\
+a_{1,17} =&   -0.0000&	a_{2,17} =&   -0.0000	\\
+a_{1,18} =&    0.0071&	a_{2,18} =&    0.0013	\\
+a_{1,19} =&   -0.0000&	a_{2,19} =&    0.0000	
+\end{smallmatrix}}
+\right)
+$$
+\item In the following you will find the requested plots. The trajectory is estimated with the saved parameters.
+%\begin{figure}[h!]
+%  	\centering
+%    \scalebox{.6}{\input{img/robotLR1.tikz}}
+%    \caption{Estimated robot trajectory with input $(0,0.05)$}
+%    \label{fig:robotLR1}
+%\end{figure}
+%\begin{figure}[h!]
+%  	\centering
+%    \scalebox{.6}{\input{img/robotLR2.tikz}}
+%    \caption{Estimated robot trajectory with input $(1,0)$}
+%    \label{fig:robotLR2}
+%\end{figure}
+%\begin{figure}[h!]
+%  	\centering
+%    \scalebox{.6}{\input{img/robotLR3.tikz}}
+%    \caption{Estimated robot trajectory with input $(1,0.05)$}
+%    \label{fig:robotLR3}
+%\end{figure}
+%\begin{figure}[h!]
+%  	\centering
+%    \scalebox{.6}{\input{img/robotLR4.tikz}}
+%    \caption{Estimated robot trajectory with input $(-1,-0.05)$}
+%    \label{fig:robotLR4}
+%\end{figure}
+\end{compactenum}
+
+
+
+
+\end{document}
+
+
