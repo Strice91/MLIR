@@ -41,6 +41,7 @@ disp(a_xy);
 disp('Teta');
 disp(a_t);
 disp(sprintf('best_p1=%i best_p2=%i',[best_p1,best_p2]));
+disp(sprintf('min_err_xy=%0.4f min_err_t=%0.4f',[min_err_xy,min_err_t]));
 
 %% b)
 k2 = 5;
@@ -82,25 +83,26 @@ disp(a_xy);
 disp('Teta');
 disp(a_t);
 disp(sprintf('best_p1=%i best_p2=%i',[best_p1,best_p2]));
+disp(sprintf('min_err_xy=%0.4f min_err_t=%0.4f',[min_err_xy,min_err_t]));
 
 save('params','par');
 
-Simulate_robot(0,0.05);
-try
-    matlab2tikz('../tex/img/robotLR1.tikz');
-end
-Simulate_robot(1,0);
-try
-    matlab2tikz('../tex/img/robotLR2.tikz');
-end
-Simulate_robot(1,0.05);
-try
-    matlab2tikz('../tex/img/robotLR3.tikz');
-end
-Simulate_robot(-1,-0.05);
-try
-    matlab2tikz('../tex/img/robotLR4.tikz');
-end
+% Simulate_robot(0,0.05);
+% try
+%     matlab2tikz('../tex/img/robotLR1.tikz');
+% end
+% Simulate_robot(1,0);
+% try
+%     matlab2tikz('../tex/img/robotLR2.tikz');
+% end
+% Simulate_robot(1,0.05);
+% try
+%     matlab2tikz('../tex/img/robotLR3.tikz');
+% end
+% Simulate_robot(-1,-0.05);
+% try
+%     matlab2tikz('../tex/img/robotLR4.tikz');
+% end
 %% c)
 
 % k from input
