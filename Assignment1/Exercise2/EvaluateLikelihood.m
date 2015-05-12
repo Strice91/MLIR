@@ -5,7 +5,7 @@ img = double(imread(Image));
 H = size(img,1);
 W = size(img,2);
 
-rgb = reshape(img,[3,H*W]);
+rgb = reshape(img,[H*W,3])';
 % mu = repmat(mu,1,size(rgb,2));
 % 
 % e = (Sigma \ (rgb-mu));

@@ -1,4 +1,4 @@
-function [mu, Sigma] = LearnModelParameters(DirectoryName,n)
+function [mu, Sigma] = LearnModelParameters(DirectoryName,n,p)
 
 d = dir(fullfile(DirectoryName,'*.jpg'));
 N = length(d);
@@ -7,7 +7,7 @@ if N<n
    error('Not enough images in folder!'); 
 end
 
-p = 0.2;
+%p = 0.2;
 
 % List of RGB Values
 rgb = [];
