@@ -47,7 +47,7 @@ while 1
     % Update cluster centers. Set the cluster representative to the mean
     % of all datapoints in the culster
     for k = 1:K
-        % Find all datapoints labeld with k
+        % Find all datapoints labled with k
         ind = A==k;
         % Clone Matrix for 3D indexing
         ind3D = repmat(ind,1,1,3);
@@ -76,10 +76,15 @@ end
 figure();
 hold all;
 for k = 1:K
+   % Find all datapoints labled with k
    ind =  A==k;
+   % Clone Matrix for 3D indexing
    ind3D = repmat(ind,1,1,3);
+   % Get all points of this cluster
    points = gesture(ind3D);
+   % Reshape them in 3 component vectors
    points = reshape(points,numel(points)/3,3);
+   % plot x,y values of each cluster point
    plot(points(:,1),points(:,2),colors{k});
 end
 box on;
