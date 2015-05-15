@@ -49,7 +49,7 @@ Email: stefan.roehrl@tum.de}}
 
 \IEEEpeerreviewmaketitle
 
-\section{Exercise 1}
+\section{Exercise}
 
 \begin{compactenum}[a)]
 
@@ -131,33 +131,179 @@ a_{1,19} =&   -0.0000&	a_{2,19} =&    0.0000
 \right)
 $$
 \item In the following you will find the requested plots. The trajectory is estimated with the saved parameters.
-%\begin{figure}[h!]
-%  	\centering
-%    \scalebox{.6}{\input{img/robotLR1.tikz}}
-%    \caption{Estimated robot trajectory with input $(0,0.05)$}
-%    \label{fig:robotLR1}
-%\end{figure}
-%\begin{figure}[h!]
-%  	\centering
-%    \scalebox{.6}{\input{img/robotLR2.tikz}}
-%    \caption{Estimated robot trajectory with input $(1,0)$}
-%    \label{fig:robotLR2}
-%\end{figure}
-%\begin{figure}[h!]
-%  	\centering
-%    \scalebox{.6}{\input{img/robotLR3.tikz}}
-%    \caption{Estimated robot trajectory with input $(1,0.05)$}
-%    \label{fig:robotLR3}
-%\end{figure}
-%\begin{figure}[h!]
-%  	\centering
-%    \scalebox{.6}{\input{img/robotLR4.tikz}}
-%    \caption{Estimated robot trajectory with input $(-1,-0.05)$}
-%    \label{fig:robotLR4}
-%\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.6}{\input{img/robotLR1.tikz}}
+    \caption{Estimated robot trajectory with input $(0,0.05)$}
+    \label{fig:robotLR1}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.6}{\input{img/robotLR2.tikz}}
+    \caption{Estimated robot trajectory with input $(1,0)$}
+    \label{fig:robotLR2}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.6}{\input{img/robotLR3.tikz}}
+    \caption{Estimated robot trajectory with input $(1,0.05)$}
+    \label{fig:robotLR3}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.6}{\input{img/robotLR4.tikz}}
+    \caption{Estimated robot trajectory with input $(-1,-0.05)$}
+    \label{fig:robotLR4}
+\end{figure}
 \end{compactenum}
 
+\section{Exercise}
 
+\begin{compactenum}[a)]
+\item The learned values for the skin model from 20 pictures of George W. Bush with 20\% of the centered image are given below:
+$$
+\mu_s =
+ \begin{pmatrix}
+  176.9146 \\
+  129.1766 \\
+  103.8827
+ \end{pmatrix}
+$$
+
+$$
+\Sigma_s =
+ \begin{pmatrix}
+    1726.4  &  1431.6  &  1447.9 \\
+    1431.6  &  1426.8  &  1449.8 \\
+    1447.9  &  1449.8  &  1593.5
+ \end{pmatrix}
+$$
+
+\item The learned values for the background model learned from all background images are these:
+$$
+\mu_b =
+ \begin{pmatrix}
+  103.3421 \\
+   98.9777 \\
+   87.1115
+ \end{pmatrix}
+$$
+
+$$
+\Sigma_b =
+ \begin{pmatrix}
+    5537.8  &  4744.9  &  4294.5 \\
+    4744.9  &  4793.4  &  4517.4 \\
+    4294.5  &  4517.4  &  5033.1
+ \end{pmatrix}
+$$
+\newpage
+\item The following pictures (cf. Fig. \ref{fig:skin1} and Fig. \ref{fig:skin2}) show the normalized LikValues ( $p(x \vert skin model)$ ) for two unknown pictures
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage-skin.png}
+    \caption{Normalized Skin Model Likelihood of SampleImage.png}
+    \label{fig:skin1}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage2-skin.png}
+    \caption{Normalized Skin Model Likelihood of SampleImage2.png}
+    \label{fig:skin2}
+\end{figure}
+
+\newpage
+\item The next pictures (cf. Fig. \ref{fig:back1} and Fig. \ref{fig:back2}) show the normalized LikValues ( $p(x \vert backgroundmodel)$ ) for two unknown pictures
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage-back.png}
+    \caption{Normalized Background Model Likelihood of SampleImage.png}
+    \label{fig:back1}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage2-back.png}
+    \caption{Normalized Background Model Likelihood of SampleImage2.png}
+    \label{fig:back2}
+\end{figure}
+
+\newpage
+\item Binary classification images (white belongs most likely to skin, black belongs to background)
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage-bin.png}
+    \caption{Binary classification of SampleImage.png}
+    \label{fig:bin1}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage2-bin.png}
+    \caption{Binary classification of SampleImage2.png}
+    \label{fig:bin2}
+\end{figure}
+
+\newpage
+\item The face area is surrounded by a red rectangle .
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage-face.png}
+    \caption{Face detection of SampleImage.png}
+    \label{fig:face1}
+\end{figure}
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/SampleImage2-face.png}
+    \caption{Face detection of SampleImage2.png}
+    \label{fig:face2}
+\end{figure}
+
+\end{compactenum}
+
+\newpage
+\section{Exercise}
+At first sight one cloud think that the K-means and NUBS algorithm would produce some similar results. But this is only partly true for the o gesture (cf. Fig. \ref{fig:kmean_o} and Fig. \ref{fig:nubs_o}). Even here there a differences in how the points are divided. K-means produces for every gesture a good separation in clear sections of the gesture. NUBS has sometimes problems the divide the sections properly. A good example is the o gesture (cf. Fig. \ref{fig:nubs_o}) where you can find a yellow cluster, a blue cluster an then again a yellow cluster. Especially in the l and x gesture (cf. Fig. \ref{fig:nubs_l}, \ref{fig:nubs_x}) NUBS leads in the x,y space to clusters which are laying above each other. Where as K-means is able to separate also this gestures properly (cf. Fig. \ref{fig:kmean_l}, \ref{fig:kmean_x}). If there would not be the initialization with the same vectors K-means and NUBS would produce a different output every time. But as the clustering results show K-means might be a better tool for gesture recognition. If you don't know which gesture you will have to recognize you would have to choose a random initialization which could lead to bad results. Therefore you could determine some input vectors for the K-means algorithm by first performing the NUBS as a kind of prepossessing. A comparison of the results for the two algorithms can be found below:
+
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.5}{\input{img/kmean_l.tikz}}
+    \caption{K-means on gesture l}
+    \label{fig:kmean_l}
+\end{figure}
+
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.5}{\input{img/kmean_o.tikz}}
+    \caption{K-means on gesture o}
+    \label{fig:kmean_o}
+\end{figure}
+
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.5}{\input{img/kmean_x.tikz}}
+    \caption{K-means on gesture x}
+    \label{fig:kmean_x}
+\end{figure}
+
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.5}{\input{img/nubs_l.tikz}}
+    \caption{NUBS on gesture l}
+    \label{fig:nubs_l}
+\end{figure}
+
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.5}{\input{img/nubs_o.tikz}}
+    \caption{NUBS on gesture o}
+    \label{fig:nubs_o}
+\end{figure}
+
+\begin{figure}[h!]
+  	\centering
+    \scalebox{.5}{\input{img/nubs_x.tikz}}
+    \caption{NUBS on gesture x}
+    \label{fig:nubs_x}
+\end{figure}
 
 
 \end{document}

@@ -74,14 +74,14 @@ while K < max_K
     % Indices which are closer to Xa
     ind_Xa = dist_Xa <= dist_Xb;
     % Indices which are closer to Xb
-    ind_Xb = dist_Xa >= dist_Xb;
+    ind_Xb = dist_Xa > dist_Xb;
 
     % Update labels
-    A(ind_Xa) = split_cluster;
-    A(ind_Xb) = K+1;
+    A(split_ind) = (ind_Xa) * split_cluster + (ind_Xb) * (K+1);
 
+    ind = A==split_cluster;
     % Clone Xa Matrix for 3D indexing
-    ind3D_Xa = repmat(ind_Xa,1,1,3);
+    ind3D_Xa = repmat(ind,1,1,3);
     % Get all points of this cluster
     points_Xa = gesture(ind3D_Xa);
     % Reshape them in 3 component vectors
@@ -90,8 +90,9 @@ while K < max_K
     % for this cluster an update cluster representative
     y(split_cluster,:) = mean(points_Xa);
 
+    ind = A==K+1;
     % Clone Xb Matrix for 3D indexing
-    ind3D_Xb = repmat(ind_Xb,1,1,3);
+    ind3D_Xb = repmat(ind,1,1,3);
     % Get all points of this cluster
     points_Xb = gesture(ind3D_Xb);
     % Reshape them in 3 component vectors
@@ -103,6 +104,24 @@ while K < max_K
     % increase K for next interration
     K = K+1;
 end
+
+figure();
+hold all;
+
+for k = 1:K
+   % Find all datapoints labled with k
+   ind =  A==k;
+   % Clone Matrix for 3D indexing
+   ind3D = repmat(ind,1,1,3);
+   % Get all points of this cluster
+   points = gesture(ind3D);
+   % Reshape them in 3 component vectors
+   points = reshape(points,numel(points)/3,3);
+   % plot x,y values of each cluster point
+   plot(points(:,1),points(:,2),colors{k});
+end
+box on;
+grid on;
 
 end
 

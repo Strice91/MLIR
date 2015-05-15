@@ -22,9 +22,9 @@ p = 1;
 
 disp('Background Model');
 disp('mu');
-disp(mu_s);
+disp(mu_b);
 disp('Sigma');
-disp(Sigma_s);
+disp(Sigma_b);
 
 %% c)
 % Skin Likelihood of Image
