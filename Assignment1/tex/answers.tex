@@ -130,6 +130,8 @@ a_{1,19} =&   -0.0000&	a_{2,19} =&    0.0000
 \end{smallmatrix}}
 \right)
 $$
+
+
 \item In the following you will find the requested plots. The trajectory is estimated with the saved parameters.
 \begin{figure}[h!]
   	\centering
@@ -157,6 +159,7 @@ $$
 \end{figure}
 \end{compactenum}
 
+\newpage
 \section{Exercise}
 
 \begin{compactenum}[a)]
@@ -263,44 +266,45 @@ $$
 \section{Exercise}
 At first sight one cloud think that the K-means and NUBS algorithm would produce some similar results. But this is only partly true for the o gesture (cf. Fig. \ref{fig:kmean_o} and Fig. \ref{fig:nubs_o}). Even here there a differences in how the points are divided. K-means produces for every gesture a good separation in clear sections of the gesture. NUBS has sometimes problems the divide the sections properly. A good example is the o gesture (cf. Fig. \ref{fig:nubs_o}) where you can find a yellow cluster, a blue cluster an then again a yellow cluster. Especially in the l and x gesture (cf. Fig. \ref{fig:nubs_l}, \ref{fig:nubs_x}) NUBS leads in the x,y space to clusters which are laying above each other. Where as K-means is able to separate also this gestures properly (cf. Fig. \ref{fig:kmean_l}, \ref{fig:kmean_x}). If there would not be the initialization with the same vectors K-means and NUBS would produce a different output every time. But as the clustering results show K-means might be a better tool for gesture recognition. If you don't know which gesture you will have to recognize you would have to choose a random initialization which could lead to bad results. Therefore you could determine some input vectors for the K-means algorithm by first performing the NUBS as a kind of prepossessing. A comparison of the results for the two algorithms can be found below:
 
+
 \begin{figure}[h!]
   	\centering
-    \scalebox{.5}{\input{img/kmean_l.tikz}}
+    \scalebox{.47}{\input{img/kmean_l.tikz}}
     \caption{K-means on gesture l}
     \label{fig:kmean_l}
 \end{figure}
-
+\vspace{-10pt}
 \begin{figure}[h!]
   	\centering
-    \scalebox{.5}{\input{img/kmean_o.tikz}}
+    \scalebox{.47}{\input{img/kmean_o.tikz}}
     \caption{K-means on gesture o}
     \label{fig:kmean_o}
 \end{figure}
-
+\vspace{-10pt}
 \begin{figure}[h!]
   	\centering
-    \scalebox{.5}{\input{img/kmean_x.tikz}}
+    \scalebox{.47}{\input{img/kmean_x.tikz}}
     \caption{K-means on gesture x}
     \label{fig:kmean_x}
 \end{figure}
-
+\vspace{-20pt}
 \begin{figure}[h!]
   	\centering
-    \scalebox{.5}{\input{img/nubs_l.tikz}}
+    \scalebox{.47}{\input{img/nubs_l.tikz}}
     \caption{NUBS on gesture l}
     \label{fig:nubs_l}
 \end{figure}
-
+\vspace{-20pt}
 \begin{figure}[h!]
   	\centering
-    \scalebox{.5}{\input{img/nubs_o.tikz}}
+    \scalebox{.47}{\input{img/nubs_o.tikz}}
     \caption{NUBS on gesture o}
     \label{fig:nubs_o}
 \end{figure}
-
+\vspace{-20pt}
 \begin{figure}[h!]
   	\centering
-    \scalebox{.5}{\input{img/nubs_x.tikz}}
+    \scalebox{.47}{\input{img/nubs_x.tikz}}
     \caption{NUBS on gesture x}
     \label{fig:nubs_x}
 \end{figure}
