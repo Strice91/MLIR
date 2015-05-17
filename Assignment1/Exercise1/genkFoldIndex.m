@@ -5,10 +5,8 @@ train = cell(1,k);
 test  = cell(1,k);
 
 for K = 1:k
-%     test{K} = 1+(K-1)*(n/k):K*(n/k);
-%     train{K} = setdiff(ind,test{K});
-    train{K} = 1+(K-1)*(n/k):K*(n/k);
-    test{K} = setdiff(ind,train{K});
+    test{K} = 1+(K-1)*(n/k):K*(n/k);
+    train{K} = setdiff(ind,test{K});
 end
 
 end
