@@ -47,9 +47,9 @@ disp(a_xy);
 disp('Teta');
 disp(a_t);
 disp(sprintf('best_p1=%i best_p2=%i',[best_p1,best_p2]));
-disp(sprintf('tot_err_xy=%0.4f tot_err_t=%0.4f',[tot_err_xy,tot_err_t]));
+disp(sprintf('tot_err_xy=%0.6f tot_err_t=%0.6f',[tot_err_xy,tot_err_t]));
 
-%save('params','par');
+% save('params','par');
 
 % Simulate_robot(0,0.05);
 % try
@@ -66,6 +66,10 @@ disp(sprintf('tot_err_xy=%0.4f tot_err_t=%0.4f',[tot_err_xy,tot_err_t]));
 % Simulate_robot(-1,-0.05);
 % try
 %     matlab2tikz('../tex/img/robotLR4.tikz');
+% end
+% Simulate_robot(0.5,-0.03);
+% try
+%     matlab2tikz('../tex/img/robotLR5.tikz');
 % end
 
 end

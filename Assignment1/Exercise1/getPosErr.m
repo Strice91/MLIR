@@ -16,6 +16,8 @@ pred = X*a;
 
 % Calculate Position Error
 err_v = O - pred';
-err = sum(sqrt(err_v(:).^2)) / numel(err_v);
+err = sum(sqrt(err_v(1,:).^2 + err_v(2,:).^2)) / size(err_v,2);
+
+%err = sum(sqrt(err_v(:).^2)) / numel(err_v) * 2;
 end
 
