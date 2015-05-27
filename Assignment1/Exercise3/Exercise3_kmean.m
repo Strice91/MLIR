@@ -60,7 +60,7 @@ while 1
         y(k,:) = mean(points);
         % Get cluster distortion
         cluster_dist = bsxfun(@minus,points,y(k,:));
-        cluster_dist = sum(sqrt(cluster_dist(:).^2));
+        cluster_dist = sum(cluster_dist(:).^2);
         % Add cluster distortion to total distortion
         total_dist = total_dist + cluster_dist;
     end

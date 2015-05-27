@@ -66,6 +66,7 @@ With these polynomial orders the total errors are:
 \end{align}
 
 The parameters determined with k=2 are listed below:
+\vspace{20pt}
 $$
 \left(
 \scriptscriptstyle{
@@ -89,6 +90,7 @@ a_{1,16} =& 0.0000  & a_{2,16} =& 0.0000
 \end{smallmatrix}}
 \right)
 $$
+\vspace{20pt}
 
 \item For k = 5 the best order with the lowest average error overall test-sets are:
 \begin{align}
@@ -103,34 +105,24 @@ With these polynomial orders the total errors are:
 \end{align}
 
 The parameters determined with k = 5 are listed below:
-
+\vspace{20pt}
 $$
 \left(
 \scriptscriptstyle{
 \begin{smallmatrix}
-a_{1,1} =&   -0.0078&	a_{2,1} =&   -0.0015&	a_{3,1} =&  -0.0005 \\
-a_{1,2} =&    0.9210&	a_{2,2} =&   -0.0021&	a_{3,2} =&	-0.0004	\\
-a_{1,3} =&   -0.0074& 	a_{2,3} =&    0.0131&	a_{3,3} =&	 0.9985	\\
-a_{1,4} =&    0.0086&	a_{2,4} =&    0.4704&	a_{3,4} =&	-0.0000	\\
-a_{1,5} =&   -0.0012&	a_{2,5} =&   -0.0005&	a_{3,5} =&	 0.0000	\\
-a_{1,6} =&    0.0777&	a_{2,6} =&    0.0071&	a_{3,6} =&	-0.0004	\\
-a_{1,7} =&   -0.0035&	a_{2,7} =&    0.0008&	a_{3,7} =&	-0.0001	\\
-a_{1,8} =&    0.0002&	a_{2,8} =&    0.0002&	a_{3,8} =&	 0.0000	\\
-a_{1,9} =&    0.0007&	a_{2,9} =&   -0.0166&	a_{3,9} =&	 0.0015	\\
-a_{1,10} =&   -0.0005&	a_{2,10} =&   -0.0009&	a_{3,10} =&	 0.0000	\\
-a_{1,11} =&    0.0001&	a_{2,11} =&    0.0000	\\
-a_{1,12} =&   -0.0503&	a_{2,12} =&   -0.0080	\\
-a_{1,13} =&    0.0000&	a_{2,13} =&   -0.0000	\\
-a_{1,14} =&   -0.0000&	a_{2,14} =&   -0.0000	\\
-a_{1,15} =&    0.0015&	a_{2,15} =&    0.0037	\\
-a_{1,16} =&    0.0000&	a_{2,16} =&    0.0000	\\
-a_{1,17} =&   -0.0000&	a_{2,17} =&   -0.0000	\\
-a_{1,18} =&    0.0071&	a_{2,18} =&    0.0013	\\
-a_{1,19} =&   -0.0000&	a_{2,19} =&    0.0000	
+a_{1,1} =&	 -0.0000	a_{2,1} =&  -0.0025   a_{3,1} =&	-0.0005 \\
+a_{1,2} =&    0.9246    a_{2,2} =&	-0.0002   a_{3,2} =&	-0.0004 \\
+a_{1,3} =&   -0.0102    a_{2,3} =&	 0.0005	  a_{3,3} =&	 0.9985 \\
+a_{1,4} =&   -0.0038    a_{2,4} =&	 0.4617   a_{3,4} =&	-0.0000 \\
+a_{1,5} =&    0.0006    a_{2,5} =&	 0.0002   a_{3,5} =&	 0.0000 \\
+a_{1,6} =&   -0.0031    a_{2,6} =&	 0.0003   a_{3,6} =&	-0.0004 \\
+a_{1,7} =&   -0.0009    a_{2,7} =&	 0.0001   a_{3,7} =&	-0.0001 \\
+a_{1,8} =&   -0.0001    a_{2,8} =&	 0.0000   a_{3,8} =&	 0.0000 \\
+a_{1,9} =&    0.0057    a_{2,9} =&	 0.0009   a_{3,9} =&	 0.0015 \\
+a_{1,10} =&    0.0001   a_{2,10} =&	-0.0005   a_{3,10} =&	 0.0000 \\
 \end{smallmatrix}}
 \right)
 $$
-
 
 \item In the following you will find the requested plots. The trajectory is estimated with the saved parameters.
 \begin{figure}[h!]
@@ -270,7 +262,7 @@ $$
 
 \newpage
 \section{Exercise}
-At first sight one cloud think that the K-means and NUBS algorithm would produce some similar results. But this is only partly true for the o gesture (cf. Fig. \ref{fig:kmean_o} and Fig. \ref{fig:nubs_o}). Even here there a differences in how the points are divided. K-means produces for every gesture a good separation in clear sections of the gesture. NUBS has sometimes problems the divide the sections properly. A good example is the o gesture (cf. Fig. \ref{fig:nubs_o}) where you can find a yellow cluster, a blue cluster an then again a yellow cluster. Especially in the l and x gesture (cf. Fig. \ref{fig:nubs_l}, \ref{fig:nubs_x}) NUBS leads in the x,y space to clusters which are laying above each other. Where as K-means is able to separate also this gestures properly (cf. Fig. \ref{fig:kmean_l}, \ref{fig:kmean_x}). If there would not be the initialization with the same vectors K-means and NUBS would produce a different output every time. But as the clustering results show K-means might be a better tool for gesture recognition. If you don't know which gesture you will have to recognize you would have to choose a random initialization which could lead to bad results. Therefore you could determine some input vectors for the K-means algorithm by first performing the NUBS as a kind of prepossessing. A comparison of the results for the two algorithms can be found below:
+At first sight one could think that the K-means and NUBS algorithm would produce some similar results. But this is only partly true for the o gesture (cf. Fig. \ref{fig:kmean_o} and Fig. \ref{fig:nubs_o}). But there are differences in how the points are divided. K-means produces for every gesture a good separation in clear sections of the gesture. NUBS has sometimes problems the divide the sections properly. A good example is the o gesture (cf. Fig. \ref{fig:nubs_o}) where you can find a yellow cluster, a blue cluster, a green cluster and again a yellow cluster. Especially in the l and x gesture (cf. Fig. \ref{fig:nubs_l}, \ref{fig:nubs_x}) NUBS leads in the x,y space to clusters which are laying above each other. Where as K-means is able to separate also this gestures properly (cf. Fig. \ref{fig:kmean_l}, \ref{fig:kmean_x}). If there would not be the initialization with the same vectors K-means and NUBS would produce a different output every time. But as the clustering results show K-means might be a better tool for gesture recognition. If you don't know which gesture you will have to recognize you would have to choose a random initialization which could lead to bad results. Therefore you could determine some input vectors for the K-means algorithm by first performing the NUBS as a kind of prepossessing. A comparison of the results for the two algorithms can be found below:
 
 
 \begin{figure}[h!]

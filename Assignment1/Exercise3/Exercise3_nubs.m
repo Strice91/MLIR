@@ -39,7 +39,7 @@ while K < max_K
         points = reshape(points,numel(points)/3,3);
         % Get cluster distortion
         cluster_dist = bsxfun(@minus,points,y(k,:));
-        cluster_dist = sum(sqrt(cluster_dist(:).^2));
+        cluster_dist = sum(cluster_dist(:).^2);
 
         % Is this cluster the one with the highest distortion?
         if cluster_dist > J_max
