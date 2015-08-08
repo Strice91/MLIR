@@ -29,7 +29,7 @@ while 1
     MU = ((respo * X') ./ repmat(nk,1,m))';
     % s_k = 1/nk * SUM( p(wk|xi,theta) * (xi-mu_k) * (xi-mu_k)' )
     for k = 1:K
-       SIGMA{k} = 1/nk(k) * (repmat(respo(1,:),m,1) .*...
+       SIGMA{k} = 1/nk(k) * (repmat(respo(k,:),m,1) .*...
            bsxfun(@minus,X,MU(:,k))) * bsxfun(@minus,X,MU(:,k))';
     end
     % pi_k = nk / N;
