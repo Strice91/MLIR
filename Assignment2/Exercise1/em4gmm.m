@@ -2,7 +2,7 @@ function [ MU, SIGMA, PI] = em4gmm(X,MU,SIGMA,PI)
 
 [m,N] = size(X);
 K = size(MU,2);
-min_diff = 0.1;
+min_diff = 0.0001;
 
 %% INIT
 logLH_old = getLogLH(X,MU,SIGMA,PI);
@@ -15,6 +15,7 @@ while 1
     
     for k = 1:K
         for i = 1:N
+            % SUM( pi_j * N(x_i|mu_j,SIGMA_j)
             n = PI * getPdf(X(:,i),MU,SIGMA)';
             z = PI(k) * getPdf(X(:,i),MU(:,k),SIGMA{k});
             respo(k,i) = z/n;

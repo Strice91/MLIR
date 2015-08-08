@@ -9,12 +9,12 @@ load('pi.txt')
 [pTrain, aTrain] = hmmForward(B,A,A_Train_Binned,pi); 
 
 logLH_Train = log(pTrain);
+labelsTrain = logLH_Train > -120;
 
 % Test Data p(O|Lambda)
 [pTest, aTest] = hmmForward(B,A,A_Test_Binned,pi);
 
 logLH_Test = log(pTest);
-
-labels = logLH_Test > -120;
+labelsTest = logLH_Test > -120;
 
 

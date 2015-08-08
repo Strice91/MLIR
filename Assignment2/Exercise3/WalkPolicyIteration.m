@@ -11,7 +11,7 @@ load('reward.mat');
 policy = ceil(rand(n,1)*4);
 
 % Discount Factor
-y = -0.999;
+y = 0.999;
 
 policy_old = policy;
 
@@ -26,7 +26,7 @@ while 1
     vPi = I\b;
     
     for j = 1:n
-        [~,policy(j)] = max(rew(j,:)'+vPi(d(j,:)));
+        [~,policy(j)] = max(rew(j,:)' + y*vPi(d(j,:)));
     end
     
     if norm(policy-policy_old)<=0.1
@@ -35,6 +35,8 @@ while 1
         policy_old = policy;
     end
 end
+
+
 
 
 
