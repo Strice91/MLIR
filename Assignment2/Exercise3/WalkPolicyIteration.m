@@ -1,4 +1,4 @@
-function [ output_args ] = WalkPolicyIteration( s )
+function WalkPolicyIteration( s )
 
 load('delta.mat');
 load('rtest.mat');
