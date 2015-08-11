@@ -13,8 +13,8 @@ k = 4;
 
 % IDX   = Labels for each sample
 % C     = Cluster Centers
-%[IDX, MU] = kmeans(X',k);
-load('after_kmeans.mat');
+[IDX, MU] = kmeans(X',k);
+%load('after_kmeans.mat');
 MU = MU';
 
 for i = 1:k
