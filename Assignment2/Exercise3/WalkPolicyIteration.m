@@ -70,9 +70,8 @@ end
 disp(sprintf('Interations needed: %d',cnt));
 % print cartoon
 f = walkshow(q);
-set(gcf,'PaperUnits','inches','PaperPosition',[0 0 5 1])
-
-print(f,'-dpng',sprintf('../tex/img/3walkshow%d.png',s),'-r300')
+%set(gcf,'PaperUnits','inches','PaperPosition',[0 0 5 1])
+%print(f,'-dpng',sprintf('../tex/img/3walkshow%d.png',s),'-r300')
 
 end
 
