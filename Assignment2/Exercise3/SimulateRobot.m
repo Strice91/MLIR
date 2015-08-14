@@ -1,12 +1,12 @@
-function [ new_s, new_rew ] = SimulateRobot(s, a)
+function [newstate, reward]=SimulateRobot(state, action)
 
 load('reward.mat');
 load('delta.mat');
 
 % get next state from state transition matrix
-new_s = d(s,a);
+newstate = d(state,action);
 % get reward for current state and choosen action
-new_rew = rew(s,a);
+reward = rew(state,action);
 
 end
 
