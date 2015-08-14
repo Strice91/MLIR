@@ -1,31 +1,37 @@
 function WalkQLearning(s)
 
+close all;
+
 load('delta.mat');
-load('rtest.mat');
+load('reward.mat');
 
 % n = # states
 % m = # actions
 [n, m] = size(rew);
 
-% Simulation Time
-T = 800;
+% Simulations
+S = 8000;
 
 % Q-Function
 Q = zeros(n,m);
 
 % Parameter
-e = 0.8;
-y = 0.5;
-a = 0.5;
+e = 0.1;    % epsilon
+y = 0.5;    % gamma
+a = 0.9;    % alpha
 
+% Starting state
 state = s;
 
-for t = 1:T
-   
-   action = greedy_step(Q, state, e);
-   [state_new, r] = SimulateRobot(state,action);
-   Q(state, action) = Q(state, action) + a*(r + y*max(Q(state_new, :)) - Q(state, action));
-   state = state_new;
+for t = 1:S
+    % Take greedy action with probability 1-e
+    action = greedy_step(Q, state, e);
+    % Perform the choosen action
+    [state_new, r] = SimulateRobot(state,action);
+    % Calculate Q Function
+    Q(state, action) = Q(state, action) + a*(r + y*max(Q(state_new, :)) - Q(state, action));
+    % Set the new state
+    state = state_new;
 end
 
 [~, policy] = max(Q, [], 2);
@@ -42,7 +48,9 @@ for i = 2:length(q)
     q(i) = d(current_state,policy(current_state));
 end
 
-walkshow(q);
+f = walkshow(q);
+set(gcf,'PaperUnits','inches','PaperPosition',[0 0 5 1])
+print(f,'-dpng',sprintf('../tex/img/3walkshow%d.png',s),'-r300')
 
 end
 

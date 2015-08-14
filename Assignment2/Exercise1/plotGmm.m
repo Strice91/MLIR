@@ -1,4 +1,4 @@
-function plotGmm(X,IDX,MU,SIGMA)
+function f = plotGmm(X,IDX,MU,SIGMA)
 
 c = {'r','g','b','c','m','y','k'};
 
@@ -13,7 +13,7 @@ for j = 1:5
     h(j) = exp(-(j-1));
 end
 
-figure;
+f = figure;
 hold all;
 for i = 1:K
     F = mvnpdf([X1(:) X2(:)],MU(:,i)',SIGMA{i});

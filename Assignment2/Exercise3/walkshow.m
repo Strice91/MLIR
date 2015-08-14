@@ -1,4 +1,4 @@
-function walkshow(states)
+function f = walkshow(states)
   [dummy, n] = size(states);
 
   im = {imadjust(imread('img/step1.png')),
@@ -18,12 +18,13 @@ function walkshow(states)
 	imadjust(imread('img/step15.png')),
 	imadjust(imread('img/step16.png'))};
 
-
+  
   p = im{states(1)};
   for i = 2:n
     p = [p, im{states(i)}];
   end
 
+  f = figure;
   imwrite(p, 'cartoon.png');
   imshow(p);
 end
