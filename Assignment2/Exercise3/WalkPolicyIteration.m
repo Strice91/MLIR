@@ -4,6 +4,7 @@ close all;
 
 load('delta.mat');
 load('reward.mat');
+%load('rtest.mat');
 
 % n = # states
 % m = # actions
@@ -42,7 +43,7 @@ while change > p_min
     
     % arg max
     for j = 1:n
-        [~,policy(j)] = max(rew(j,:)' + y*vPi(d(j,:)));
+        [~, policy(j)] = max(rew(j,:)' + y*vPi(d(j,:)));
     end
     
     % Caculate change in policy

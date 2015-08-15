@@ -27,4 +27,12 @@ function f = walkshow(states)
   f = figure;
   imwrite(p, 'cartoon.png');
   imshow(p);
+  start_x = 17;
+  step = 49;
+  y = 80;
+  
+  for i = 0:(n-1)
+      text(start_x+step*i,y,sprintf('%i',states(i+1)));
+  end
+  
 end

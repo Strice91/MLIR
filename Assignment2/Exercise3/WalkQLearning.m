@@ -16,8 +16,8 @@ S = 5000;
 Q = zeros(n,m);
 
 % Parameter
-e = 0.1;    % epsilon
-y = 0.99;   % gamma
+e = 0;    % epsilon
+y = 0.999;   % gamma
 a = 0.1;    % alpha
 
 % Starting state
@@ -49,8 +49,8 @@ for i = 2:length(q)
 end
 
 f = walkshow(q);
-%set(gcf,'PaperUnits','inches','PaperPosition',[0 0 5 1])
-%print(f,'-dpng',sprintf('../tex/img/3walkshow%d.png',s),'-r300')
+set(gcf,'PaperUnits','inches','PaperPosition',[0 0 5 1])
+print(f,'-dpng',sprintf('../tex/img/3walkshow%d.png',s),'-r300')
 
 end
 

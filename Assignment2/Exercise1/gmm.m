@@ -27,11 +27,11 @@ end
 % Show kmeans result
 f = plotGmm(X,IDX,MU,SIGMA);
 title('Before EM');
-print(f,'-dpng','../tex/img/1before_em.png')
+%print(f,'-dpng','../tex/img/1before_em.png')
 
 [M,S,P] = em4gmm(X,MU,SIGMA,PI);
 
 % Show EM result
 f = plotGmm(X,IDX,M,S);
 title('After EM');
-print(f,'-dpng','../tex/img/1after_em.png')
+%print(f,'-dpng','../tex/img/1after_em.png')
