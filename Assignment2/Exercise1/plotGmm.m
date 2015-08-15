@@ -9,9 +9,8 @@ K = size(MU,2);
 
 [m,N] = size(X);
 
-for j = 1:5
-    h(j) = exp(-(j-1));
-end
+%heights
+h = exp(1:2:7);
 
 f = figure;
 hold all;
