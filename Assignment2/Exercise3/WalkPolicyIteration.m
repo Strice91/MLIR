@@ -4,7 +4,6 @@ close all;
 
 load('delta.mat');
 load('reward.mat');
-%load('rtest.mat');
 
 % n = # states
 % m = # actions
@@ -68,7 +67,7 @@ end
 % load('qtest.mat')
 % q-qtest
 
-disp(sprintf('Interations needed: %d',cnt));
+fprintf('Interations needed: %d',cnt);
 % print cartoon
 f = walkshow(q);
 %set(gcf,'PaperUnits','inches','PaperPosition',[0 0 5 1])

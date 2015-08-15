@@ -128,7 +128,7 @@ $$ \pi_1 = \begin{pmatrix} 2.400e-01 \end{pmatrix} $$
 \begin{figure}[h!]
   	\centering
     \includegraphics[width=0.5\textwidth]{img/1before_em.png}
-    \caption{Gaussians and clusters before EM}
+    \caption{pdf and clusters before EM}
     \label{fig:before_em}
 \end{figure}
 The log-likelihood before the EM is: 1.353e+03
@@ -136,7 +136,7 @@ The log-likelihood before the EM is: 1.353e+03
 \begin{figure}[h!]
   	\centering
     \includegraphics[width=0.5\textwidth]{img/1after_em.png}
-    \caption{Gaussians and clusters after EM}
+    \caption{pdf and clusters after EM}
     \label{fig:after_em}
 \end{figure}
 
@@ -145,7 +145,7 @@ The log-likelihood after the EM is: 1.448e+03
 ~
 \newpage
 \section{Exercise}
-The following list contains the log-likelihood and the labels of the Train Set. By labeling 1 stands for class \textit{train} and 0 stands for class \textit{test}.
+The following list contains the log-likelihood and the labels of the Train Set. Label 1 stands for class \textit{train} and 0 stands for class \textit{test}.
 $$
 [log-likelihood, label] =
  \begin{smallmatrix}
@@ -213,7 +213,7 @@ $$
  \end{smallmatrix}
 $$
 \newpage
-This list contains the log-likelihood of the Test Set. Where again 1 stands for class \textit{train} and 0 stands for class \textit{test}. As the result shows all test have a log-likelihood value over -120. Therefore all are classified as \textit{train}.
+This list contains the log-likelihood of the Test Set. Where again 1 stands for class \textit{train} and 0 stands for class \textit{test}. As the result shows all test have a log-likelihood value over -120 so all are classified as \textit{train}.
 $$
 [log-likelihood, label] =
  \begin{smallmatrix}
@@ -341,11 +341,11 @@ Results of \textit{WalkPolicyIteration(s)}:
 \item \textbf{Q-Learning:}\\
 Used $\epsilon$: As the task says the probability $\epsilon$ should be small values between 0.1 and 0.2 are used. These values are static and don't change during the procedure. I am not sure if i found the ideal policy, but i think to improve the algorithm one should at first keep $\epsilon$ small to achieve fast convergence. After some steps when the algorithm has found a good policy one could increase $\epsilon$ to let the robot try more random actions. This should help to get out of local convergence to global convergence. I think the optimal policy could be found more often with this adaption, but as I can not prove the optimal policy I can not test my assumption.\\
 \\
-Used $\alpha$: A small value of 0.1 for $\alpha$ is used. This small learning rate promises a slow but good convergence. If $\alpha$ is choosen to big the convergence is not guaranteed. In contrast to this a small $\alpha$ needs much more steps because the convergence is very slow. Therefore 5000 iterations steps are used in \textit{WalkQLearning}. \\
+Used $\alpha$: A small value of 0.1 for $\alpha$ is used. This small learning rate promises a slow but good convergence. If $\alpha$ is chosen to big the convergence is not guaranteed. In contrast to this a small $\alpha$ needs much more steps because the updates are very small and so the convergence is very slow. Therefore 5000 iterations steps are used in \textit{WalkQLearning}. \\
 \\
-Outcomes of changing $\epsilon$ or using pure greedy policy: If one uses a too high value or too low value of $\epsilon$ it may be that the robot only walks with one leg or does other things which are not desired. It may randomly find a better policy than with mostly greedy steps but in general my tries have shown that values over 0.4 lead to a worse behavior. A pure random policy leads in many cases to a loop of actions and states. A pure greedy policy may also generate a loop, but also actions which are not desired. Against all odds the outcomes are not always the same for the same start state. However these pure greedy out comes are not always desired. Behaviors as mentioned above like the walking with only one leg may occur. One could improve that by choosing another reward matrix and lead the robot to the right cycle, but this would not be learning any more. Therefore it is important to choose a proper $\epsilon$. It must be small enough to choose the actions which will get the most reward to learn the waling. It also must allow random steps so that the algorithm is not stuck in local convergence.\\
+Outcomes of changing $\epsilon$ or using pure greedy policy: If one uses a too high value or too low value of $\epsilon$ it may be that the robot only walks with one leg or does other things which are not desired. It may randomly find a better policy than with mostly greedy steps but in general my tries have shown that values over 0.4 lead to a worse behavior. A pure random policy leads in many cases to a loop of actions and states. A pure greedy policy may also generate a loop, but also actions which are not desired. Against all odds the outcomes are not always the same for the same start state. However these pure greedy out comes are not always desired. Behaviors as mentioned above like the walking with only one leg may occur. One could improve that by choosing another reward matrix and lead the robot to the right cycle, but this would not be learning any more. Therefore it is important to choose a proper $\epsilon$. It must be small enough to find the actions which will get the most reward to learn the walking. It also must allow random steps so that the algorithm is not stuck in local convergence.\\
 
-Steps needed: I only can assume the number of steps which are nescessary to find the optimal policy as i am not able to classify the optimal policy. I used 5000 iterations to achieve good results. 500 steps are to few to find a good policy with the small learning rate $\alpha$ which was used. I also did not see any improvement in increasing the steps over 5000. \\
+Steps needed: I only can assume the number of steps which are necessary to find the optimal policy as i am not able to classify the optimal policy. I used 5000 iterations to achieve good results. 500 steps are to few to find a good policy with the small learning rate $\alpha$ which was used. I also did not see any improvement in increasing the steps over 5000. \\
 
 \newpage
 Results of \textit{WalkQLearning(s)}: 

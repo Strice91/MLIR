@@ -1,5 +1,5 @@
 function f = walkshow(states)
-  [dummy, n] = size(states);
+  [~, n] = size(states);
 
   im = {imadjust(imread('img/step1.png')),
 	imadjust(imread('img/step2.png')),
@@ -27,6 +27,8 @@ function f = walkshow(states)
   f = figure;
   imwrite(p, 'cartoon.png');
   imshow(p);
+  
+  % Print Numbers
   start_x = 17;
   step = 49;
   y = 80;
