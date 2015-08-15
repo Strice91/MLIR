@@ -10,15 +10,15 @@ load('reward.mat');
 [n, m] = size(rew);
 
 % Simulations
-S = 8000;
+S = 5000;
 
 % Q-Function
 Q = zeros(n,m);
 
 % Parameter
 e = 0.1;    % epsilon
-y = 0.5;    % gamma
-a = 0.9;    % alpha
+y = 0.99;   % gamma
+a = 0.1;    % alpha
 
 % Starting state
 state = s;
@@ -27,7 +27,7 @@ for t = 1:S
     % Take greedy action with probability 1-e
     action = greedy_step(Q, state, e);
     % Perform the choosen action
-    [state_new, r] = SimulateRobot(state,action);
+    [state_new, r] = SimulateRobot(state, action);
     % Calculate Q Function
     Q(state, action) = Q(state, action) + a*(r + y*max(Q(state_new, :)) - Q(state, action));
     % Set the new state
