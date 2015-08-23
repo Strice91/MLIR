@@ -343,11 +343,25 @@ Used $\epsilon$: As the task says the probability $\epsilon$ should be small val
 \\
 Used $\alpha$: A small value of 0.1 for $\alpha$ is used. This small learning rate promises a slow but good convergence. If $\alpha$ is chosen to big the convergence is not guaranteed. In contrast to this a small $\alpha$ needs much more steps because the updates are very small and so the convergence is very slow. Therefore 5000 iterations steps are used in \textit{WalkQLearning}. \\
 \\
-Outcomes of changing $\epsilon$ or using pure greedy policy: If one uses a too high value or too low value of $\epsilon$ it may be that the robot only walks with one leg or does other things which are not desired. It may randomly find a better policy than with mostly greedy steps but in general my tries have shown that values over 0.4 lead to a worse behavior. A pure random policy leads in many cases to a loop of actions and states. A pure greedy policy may also generate a loop, but also actions which are not desired. Against all odds the outcomes are not always the same for the same start state. However these pure greedy out comes are not always desired. Behaviors as mentioned above like the walking with only one leg may occur. One could improve that by choosing another reward matrix and lead the robot to the right cycle, but this would not be learning any more. Therefore it is important to choose a proper $\epsilon$. It must be small enough to find the actions which will get the most reward to learn the walking. It also must allow random steps so that the algorithm is not stuck in local convergence.\\
+Outcomes of changing $\epsilon$ or using pure greedy policy: If one uses a too high value or too low value of $\epsilon$ it may be that the robot only walks with one leg or does other things which are not desired. It may randomly find a better policy than with mostly greedy steps but in general my tries have shown that values over 0.4 lead to a worse behavior.
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/pure_greedy.png}
+    \caption{Example for a pure greedy behavior}
+    \label{fig:greedy}
+\end{figure}
+A pure greedy policy leads in many cases to a loop of actions and states. One could improve that by choosing another reward matrix and lead the robot to the right cycle, but this would not be learning any more. A pure random policy may also generate a loop, but also actions which are not desired. The outcomes are not always the same for the same start state. Behaviors as mentioned above like the walking with only one leg may occur but also many times a good behavior is learned.
+\begin{figure}[h!]
+  	\centering
+    \includegraphics[width=0.5\textwidth]{img/pure_random.png}
+    \caption{Example for a pure random policy}
+    \label{fig:greedy}
+\end{figure}
+Therefore it is important to choose a proper $\epsilon$. It must be small enough to find the actions which will get the most reward to learn the walking. It also must allow random steps so that the algorithm is not stuck in local convergence.\\
 
 Steps needed: I only can assume the number of steps which are necessary to find the optimal policy as i am not able to classify the optimal policy. I used 5000 iterations to achieve good results. 500 steps are to few to find a good policy with the small learning rate $\alpha$ which was used. I also did not see any improvement in increasing the steps over 5000. \\
 
-\newpage
+
 Results of \textit{WalkQLearning(s)}: 
 \\
 \\
