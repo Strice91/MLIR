@@ -2,7 +2,7 @@ function [ action ] = greedy_step(Q, s, e)
 
 [~, n] = size(Q);
 
-if rand > e
+if rand < e
     % make a non greedy decission with the probability of e
     action = randsample(n,1);
 else

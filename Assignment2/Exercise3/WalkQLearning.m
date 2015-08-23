@@ -16,7 +16,7 @@ S = 5000;
 Q = zeros(n,m);
 
 % Parameter
-e = 0;    % epsilon
+e = 0.1;    % epsilon
 y = 0.999;   % gamma
 a = 0.1;    % alpha
 
